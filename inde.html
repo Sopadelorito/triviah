@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia Quest | Juego de preguntas</title>
+  <link rel="stylesheet" href="diseño.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="logo">🧠 TRIVIA<span>QUEST</span></a>
+    <div class="nav-label">PON A PRUEBA TU MENTE</div>
+  </header>
+
+  <main class="container">
+    <section id="start-screen" class="screen start-screen">
+      <div class="hero-icon">🎯</div>
+      <p class="eyebrow">EL RETO DEL CONOCIMIENTO</p>
+      <h1>¿CUÁNTO<br><span>SABES?</span></h1>
+      <p class="subtitle">
+        Demuestra lo que sabes, responde correctamente
+        y consigue la máxima puntuación.
+      </p>
+
+      <div class="settings">
+        <label for="difficulty">ELIGE LA DIFICULTAD</label>
+        <select id="difficulty">
+          <option value="easy">Fácil 🟢</option>
+          <option value="medium" selected>Intermedio 🟡</option>
+          <option value="hard">Difícil 🔴</option>
+        </select>
+
+        <label for="amount">NÚMERO DE PREGUNTAS</label>
+        <select id="amount">
+          <option value="5">5 preguntas</option>
+          <option value="10" selected>10 preguntas</option>
+          <option value="15">15 preguntas</option>
+          <option value="20">20 preguntas</option>
+        </select>
+
+        <button id="start-btn" class="primary-btn">
+          ¡COMENZAR TRIVIA! →
+        </button>
+      </div>
+
+      <div class="features">
+        <div><span>🌎</span> Cultura general</div>
+        <div><span>🏆</span> Suma puntos</div>
+        <div><span>⚡</span> Supera tu récord</div>
+      </div>
+    </section>
+
+    <section id="quiz-screen" class="screen quiz-screen" hidden>
+      <div class="quiz-top">
+        <span id="question-counter">PREGUNTA 1 DE 10</span>
+        <span class="score-badge">⭐ <span id="score">0</span> puntos</span>
+      </div>
+
+      <div class="progress-track">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div class="question-meta">
+        <span id="category" class="category-badge">Cultura general</span>
+        <span id="difficulty-label" class="difficulty-badge">Intermedio</span>
+      </div>
+
+      <h2 id="question">Cargando pregunta...</h2>
+
+      <div id="answers" class="answers"></div>
+
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+
+      <button id="next-btn" class="primary-btn" hidden>
+        SIGUIENTE PREGUNTA →
+      </button>
+    </section>
+
+    <section id="result-screen" class="screen result-screen" hidden>
+      <div id="result-icon" class="result-icon">🏆</div>
+      <p class="eyebrow">RETO COMPLETADO</p>
+      <h1 id="result-title">¡Buen trabajo!</h1>
+      <p id="result-message" class="subtitle"></p>
+
+      <div class="final-score">
+        <span>PUNTUACIÓN FINAL</span>
+        <strong id="final-score">0</strong>
+        <span id="score-detail">0 de 10 respuestas correctas</span>
+      </div>
+
+      <div class="result-stats">
+        <div>
+          <strong id="correct-count">0</strong>
+          <span>Correctas</span>
+        </div>
+        <div>
+          <strong id="wrong-count">0</strong>
+          <span>Incorrectas</span>
+        </div>
+        <div>
+          <strong id="accuracy">0%</strong>
+          <span>Aciertos</span>
+        </div>
+      </div>
+
+      <button id="restart-btn" class="primary-btn">
+        🔄 VOLVER A JUGAR
+      </button>
+      <button id="home-btn" class="secondary-btn">
+        VOLVER AL INICIO
+      </button>
+    </section>
+
+    <section id="loading-screen" class="screen loading-screen" hidden>
+      <div class="loader"></div>
+      <h2>Preparando la trivia...</h2>
+      <p>Buscando preguntas en la base de datos.</p>
+    </section>
+
+    <section id="error-screen" class="screen error-screen" hidden>
+      <div class="result-icon">😵</div>
+      <h2>¡Ups! Algo salió mal</h2>
+      <p id="error-message">No pudimos cargar las preguntas.</p>
+      <button id="retry-btn" class="primary-btn">INTENTAR DE NUEVO</button>
+      <button id="error-home-btn" class="secondary-btn">VOLVER AL INICIO</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>TRIVIA QUEST · PREGUNTAS DE
+      <a href="https://opentdb.com/" target="_blank"
+         rel="noopener noreferrer">OPEN TRIVIA DB</a>
+    </p>
+  </footer>
+</body>
+</html>
